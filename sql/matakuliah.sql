@@ -1,0 +1,1 @@
+insert into matakuliah(kode_mata_kuliah,nama_mata_kuliah,sks) values ('1','aaa',11)

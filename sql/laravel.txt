@@ -1,0 +1,6 @@
+composer create-project laravel/laravel kwu-app
+
+php artisan key:generate
+php artisan serve
+http://127.0.0.1:8000
+182b1eef459e75bc586bfb34d67133efa53b321b
