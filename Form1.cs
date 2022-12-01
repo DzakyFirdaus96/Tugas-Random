@@ -7,64 +7,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
-namespace WindowsFormsApplication3
+
+namespace Dashboard
 {
-    public partial class Form1 : Form
+    public partial class frmDash : Form
     {
-        public Form1()
+        private MySqlConnection connection;
+        private string server;
+        private string database;
+        private string user;
+        private string password;
+        private string port;
+        private string connectionString;
+        private string sslM;
+        public frmDash()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void frmDash_Load(object sender, EventArgs e)
         {
 
-        }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (!(tusername.Text == string.Empty) && !(tPaswd.Text == string.Empty))
+            string host = "localhost";
+            string user = "root";
+            string password = "";
+            string database = "biodatadzaky";
+            string connStr = "server=" + host + ";user=" + user + ";database=" + database + ";password=" + password + ";";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            try
             {
-                if ((tusername.Text == "Dzaky") && (tPaswd.Text == "Dzaky"))
-                {
-                  //  MessageBox.Show("Login berhasil", "login page");
-                    Form2 f2 = new Form2();
-                    f2.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("username atau pasword salah", "login page");
-                }
+                conn.Open();
+                MessageBox.Show("Koneksi berhasil");
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(" username dan pasword harus di isi", "login page");
+                MessageBox.Show(ex.Message);
             }
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
+     
 
         }
     }
