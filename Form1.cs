@@ -5,87 +5,67 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace KonversiSuhu
+namespace WindowsFormsApplication3
 {
     public partial class Form1 : Form
     {
-        string a, b, c;
-        double g, hitung;
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            a = textBox1.Text;
-            b = comboBox1.Text;
-            c = comboBox2.Text;
-            g = Convert.ToDouble(a);
-            if ((b.Equals("celcius")) && (c.Equals("reamur")))
+            if (!(tusername.Text == string.Empty) && !(tPaswd.Text == string.Empty))
             {
-                hitung = g / 5 * 4;
-                textBox2.Text = hitung.ToString();
-            }
-            else if ((b.Equals("celcius")) && (c.Equals("fahrenheit")))
-            {
-                hitung = g / 5 * 9 + 32;
-                textBox2.Text = hitung.ToString();
-            }
-            else if ((b.Equals("celsius")) && (c.Equals("kelvin")))
-            {
-                hitung = g / +273.15;
-                textBox2.Text = hitung.ToString();
-            }
-            else if ((b.Equals("reamur")) && (c.Equals("celcius")))
-            {
-                hitung = g / 4 * 5;
-                textBox2.Text = hitung.ToString();
-            }
-            else if ((b.Equals("reamur")) && (c.Equals("fahrenheit")))
-            {
-                hitung = g / 4 * 9 + 32;
-                textBox2.Text = hitung.ToString();
-            }
-            else if ((b.Equals("reamur")) && (c.Equals("kelvin")))
-            {
-                hitung = g / 4 * 9 + 32;
-                textBox2.Text = hitung.ToString();
-            }
-            else if ((b.Equals("fahrenheit")) && (c.Equals("celcius")))
-            {
-                hitung = (g - 32) / 9 * 5;
-                textBox2.Text = hitung.ToString();
-            }
-            else if ((b.Equals("fahrenheit")) && (c.Equals("reamur")))
-            {
-                hitung = (g - 32) / 9 * 4;
-                textBox2.Text = hitung.ToString();
-            }
-            else if ((b.Equals("fahrenheit")) && (c.Equals("kelvin")))
-            {
-                hitung = (g - 32) / 9 * 5 + 273.15;
-                textBox2.Text = hitung.ToString();
-            }
-            else if ((b.Equals("kelvin")) && (c.Equals("celcius")))
-            {
-                hitung = g - 273.15;
-                textBox2.Text = hitung.ToString();
-            }
-            else if ((b.Equals("kelvin")) && (c.Equals("fahrenheit")))
-            {
-                hitung = (g - 273.15) / 5 * 9 + 32;
-                textBox2.Text = hitung.ToString();
+                if ((tusername.Text == "Dzaky") && (tPaswd.Text == "Dzaky"))
+                {
+                  //  MessageBox.Show("Login berhasil", "login page");
+                    Form2 f2 = new Form2();
+                    f2.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("username atau pasword salah", "login page");
+                }
             }
             else
             {
-                hitung = (g - 273.15) / 5 * 4;
-                textBox2.Text = hitung.ToString();
+                MessageBox.Show(" username dan pasword harus di isi", "login page");
             }
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
-
-
 }
